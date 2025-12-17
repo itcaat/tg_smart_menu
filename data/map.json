@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "title": "Карта канала",
+    "version": "1.0.0",
+    "updatedAt": "2025-12-17"
+  },
+  "sections": [
+    {
+      "id": "devops",
+      "title": "DevOps",
+      "description": "Инфраструктура, деплой, SRE и мониторинг",
+      "order": 10
+    },
+    {
+      "id": "k8s",
+      "title": "Kubernetes",
+      "description": "Кластеры, операторы, best practices",
+      "order": 20
+    },
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "description": "React, Next.js, современные фреймворки",
+      "order": 30
+    },
+    {
+      "id": "backend",
+      "title": "Backend",
+      "description": "API, микросервисы, базы данных",
+      "order": 40
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "description": "Безопасность, аудит, best practices",
+      "order": 50
+    }
+  ],
+  "items": [
+    {
+      "id": "tf-modules",
+      "sectionId": "devops",
+      "title": "Terraform: модульная структура",
+      "description": "Подход к организации Terraform модулей и управлению инфраструктурой как кодом",
+      "tags": ["terraform", "iac", "modules"],
+      "url": "https://t.me/example_channel/100",
+      "pinned": true
+    },
+    {
+      "id": "ci-cd-pipeline",
+      "sectionId": "devops",
+      "title": "CI/CD Pipeline с GitHub Actions",
+      "description": "Настройка полного цикла CI/CD для микросервисов",
+      "tags": ["ci-cd", "github-actions", "automation"],
+      "url": "https://t.me/example_channel/101"
+    },
+    {
+      "id": "monitoring-stack",
+      "sectionId": "devops",
+      "title": "Стек мониторинга: Prometheus + Grafana",
+      "description": "Полноценная система мониторинга и алертинга",
+      "tags": ["monitoring", "prometheus", "grafana"],
+      "url": "https://t.me/example_channel/102"
+    },
+    {
+      "id": "k8s-operators",
+      "sectionId": "k8s",
+      "title": "Kubernetes Operators: введение",
+      "description": "Что такое операторы и как они упрощают управление приложениями",
+      "tags": ["kubernetes", "operators", "automation"],
+      "url": "https://t.me/example_channel/200",
+      "pinned": true
+    },
+    {
+      "id": "k8s-networking",
+      "sectionId": "k8s",
+      "title": "Networking в Kubernetes",
+      "description": "CNI плагины, Service Mesh, сетевые политики",
+      "tags": ["kubernetes", "networking", "service-mesh"],
+      "url": "https://t.me/example_channel/201"
+    },
+    {
+      "id": "helm-charts",
+      "sectionId": "k8s",
+      "title": "Helm: пакетирование приложений",
+      "description": "Best practices для создания Helm charts",
+      "tags": ["kubernetes", "helm", "packaging"],
+      "url": "https://t.me/example_channel/202"
+    },
+    {
+      "id": "react-patterns",
+      "sectionId": "frontend",
+      "title": "React Design Patterns 2025",
+      "description": "Современные паттерны проектирования в React приложениях",
+      "tags": ["react", "patterns", "architecture"],
+      "url": "https://t.me/example_channel/300",
+      "pinned": true
+    },
+    {
+      "id": "nextjs-ssr",
+      "sectionId": "frontend",
+      "title": "Next.js: Server-Side Rendering",
+      "description": "RSC, серверные компоненты и оптимизация производительности",
+      "tags": ["nextjs", "ssr", "performance"],
+      "url": "https://t.me/example_channel/301"
+    },
+    {
+      "id": "state-management",
+      "sectionId": "frontend",
+      "title": "State Management в 2025",
+      "description": "Zustand, Jotai, и другие современные решения",
+      "tags": ["react", "state", "zustand"],
+      "url": "https://t.me/example_channel/302"
+    },
+    {
+      "id": "api-design",
+      "sectionId": "backend",
+      "title": "RESTful API Design",
+      "description": "Принципы проектирования REST API и версионирование",
+      "tags": ["api", "rest", "design"],
+      "url": "https://t.me/example_channel/400"
+    },
+    {
+      "id": "grpc-intro",
+      "sectionId": "backend",
+      "title": "gRPC для микросервисов",
+      "description": "Когда и почему стоит использовать gRPC вместо REST",
+      "tags": ["grpc", "microservices", "api"],
+      "url": "https://t.me/example_channel/401"
+    },
+    {
+      "id": "postgres-optimization",
+      "sectionId": "backend",
+      "title": "PostgreSQL: оптимизация запросов",
+      "description": "Индексы, EXPLAIN, и производительность",
+      "tags": ["postgresql", "database", "performance"],
+      "url": "https://t.me/example_channel/402",
+      "pinned": true
+    },
+    {
+      "id": "oauth2-flow",
+      "sectionId": "security",
+      "title": "OAuth 2.0 и OpenID Connect",
+      "description": "Полный гайд по современной аутентификации",
+      "tags": ["oauth", "security", "authentication"],
+      "url": "https://t.me/example_channel/500",
+      "pinned": true
+    },
+    {
+      "id": "security-headers",
+      "sectionId": "security",
+      "title": "HTTP Security Headers",
+      "description": "CSP, HSTS, и другие заголовки безопасности",
+      "tags": ["security", "http", "headers"],
+      "url": "https://t.me/example_channel/501"
+    },
+    {
+      "id": "secrets-management",
+      "sectionId": "security",
+      "title": "Управление секретами",
+      "description": "Vault, Sealed Secrets и best practices",
+      "tags": ["security", "secrets", "vault"],
+      "url": "https://t.me/example_channel/502"
+    }
+  ]
+}
+
