@@ -2,7 +2,7 @@
 
 /**
  * Генератор README.md из data/map.json
- * Создает красивую навигацию по материалам канала
+ * Создает красивую навигацию с лучшими UI/UX практиками
  */
 
 const fs = require('fs');
@@ -43,69 +43,147 @@ try {
   });
 
   // Генерируем README
-  let readme = `# ${data.meta.title}\n\n`;
-  readme += `> Навигация по материалам канала\n\n`;
-  readme += `**Версия:** ${data.meta.version} • **Обновлено:** ${data.meta.updatedAt}\n\n`;
+  let readme = '';
+  
+  // === HEADER ===
+  readme += `<div align="center">\n\n`;
+  readme += `# 🗺️ ${data.meta.title}\n\n`;
+  readme += `### Навигация по материалам канала\n\n`;
   
   // Статистика
   const totalItems = data.items.length;
   const pinnedItems = data.items.filter(i => i.pinned).length;
-  readme += `📊 **Статистика:** ${data.sections.length} разделов • ${totalItems} материалов`;
+  
+  readme += `![Разделов](https://img.shields.io/badge/Разделов-${data.sections.length}-blue?style=for-the-badge)\n`;
+  readme += `![Материалов](https://img.shields.io/badge/Материалов-${totalItems}-green?style=for-the-badge)\n`;
   if (pinnedItems > 0) {
-    readme += ` • ${pinnedItems} закрепленных`;
+    readme += `![Закреплено](https://img.shields.io/badge/Закреплено-${pinnedItems}-yellow?style=for-the-badge)\n`;
   }
-  readme += `\n\n`;
+  readme += `![Обновлено](https://img.shields.io/badge/Обновлено-${data.meta.updatedAt}-lightgrey?style=for-the-badge)\n\n`;
+  
+  readme += `---\n\n`;
+  readme += `</div>\n\n`;
 
-  // Оглавление
+  // === TABLE OF CONTENTS ===
   readme += `## 📑 Содержание\n\n`;
-  sections.forEach(section => {
+  readme += `<table>\n`;
+  readme += `<tr>\n`;
+  
+  // Делаем таблицу с 2 колонками
+  sections.forEach((section, idx) => {
+    if (idx % 2 === 0) {
+      if (idx > 0) readme += `</tr>\n`;
+      readme += `<tr>\n`;
+    }
     const count = itemsBySection[section.id]?.length || 0;
-    readme += `- [${section.title}](#${section.id}) (${count})\n`;
+    readme += `<td width="50%">\n\n`;
+    readme += `### [${section.title}](#${section.id})\n`;
+    readme += `${section.description}\n\n`;
+    readme += `📚 **${count}** ${count === 1 ? 'материал' : 'материалов'}\n\n`;
+    readme += `</td>\n`;
   });
-  readme += `\n---\n\n`;
+  
+  if (sections.length % 2 !== 0) {
+    readme += `<td width="50%"></td>\n`;
+  }
+  readme += `</tr>\n`;
+  readme += `</table>\n\n`;
+  readme += `---\n\n`;
 
-  // Разделы с материалами
-  sections.forEach(section => {
+  // === РАЗДЕЛЫ С МАТЕРИАЛАМИ ===
+  sections.forEach((section, sectionIndex) => {
     const items = itemsBySection[section.id] || [];
     
-    readme += `## ${section.title}\n\n`;
-    readme += `<a name="${section.id}"></a>\n\n`;
-    readme += `${section.description}\n\n`;
+    // Якорь и заголовок раздела
+    readme += `<div id="${section.id}"></div>\n\n`;
+    readme += `## ${getSectionEmoji(section.id)} ${section.title}\n\n`;
+    
+    // Описание в blockquote
+    readme += `> ${section.description}\n\n`;
 
     if (items.length === 0) {
-      readme += `*Пока нет материалов в этом разделе*\n\n`;
+      readme += `<div align="center">\n\n`;
+      readme += `*Материалов пока нет*\n\n`;
+      readme += `</div>\n\n`;
     } else {
+      // Материалы в виде карточек
       items.forEach(item => {
-        // Иконка для закрепленных
-        const pin = item.pinned ? '📌 ' : '';
+        readme += `<details>\n`;
+        readme += `<summary>\n\n`;
         
-        // Заголовок со ссылкой
-        readme += `### ${pin}[${item.title}](${item.url})\n\n`;
+        // Иконки и заголовок
+        const pin = item.pinned ? '📌 ' : '';
+        readme += `### ${pin}${item.title}\n\n`;
+        readme += `</summary>\n\n`;
         
         // Описание
         readme += `${item.description}\n\n`;
         
         // Теги
         if (item.tags.length > 0) {
-          const tagBadges = item.tags.map(tag => 
-            `\`${tag}\``
-          ).join(' ');
-          readme += `**Теги:** ${tagBadges}\n\n`;
+          readme += `**🏷️ Теги:** `;
+          item.tags.forEach(tag => {
+            readme += `\`${tag}\` `;
+          });
+          readme += `\n\n`;
         }
         
-        readme += `---\n\n`;
+        // Кнопка ссылки
+        readme += `<div align="center">\n\n`;
+        readme += `[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](${item.url})\n\n`;
+        readme += `</div>\n\n`;
+        
+        readme += `</details>\n\n`;
       });
+    }
+
+    // Кнопка "Наверх" между разделами
+    if (sectionIndex < sections.length - 1) {
+      readme += `<div align="right">\n\n`;
+      readme += `[⬆️ Наверх](#-содержание)\n\n`;
+      readme += `</div>\n\n`;
+      readme += `---\n\n`;
     }
   });
 
-  // Футер
-  readme += `\n## 📝 Об этом документе\n\n`;
-  readme += `Этот README автоматически генерируется из \`data/map.json\`.\n\n`;
-  readme += `Для добавления материалов отредактируйте \`data/map.json\` и запустите:\n\n`;
-  readme += `\`\`\`bash\n`;
-  readme += `npm run generate-readme\n`;
+  // === FOOTER ===
+  readme += `\n---\n\n`;
+  readme += `<div align="center">\n\n`;
+  readme += `## 💡 Как добавить материал\n\n`;
+  readme += `</div>\n\n`;
+  
+  readme += `> **Этот README автоматически генерируется** из \`data/map.json\`.\n`;
+  readme += `> Для добавления материалов отредактируйте JSON и запушьте изменения.\n\n`;
+  
+  readme += `<details>\n`;
+  readme += `<summary><b>📝 Инструкция по добавлению</b></summary>\n\n`;
+  readme += `### 1. Откройте \`data/map.json\`\n\n`;
+  readme += `### 2. Добавьте новый материал:\n\n`;
+  readme += `\`\`\`json\n`;
+  readme += `{\n`;
+  readme += `  "id": "unique-id",\n`;
+  readme += `  "sectionId": "раздел",\n`;
+  readme += `  "title": "Название",\n`;
+  readme += `  "description": "Описание",\n`;
+  readme += `  "tags": ["тег1", "тег2"],\n`;
+  readme += `  "url": "https://...",\n`;
+  readme += `  "pinned": false\n`;
+  readme += `}\n`;
   readme += `\`\`\`\n\n`;
-  readme += `Или просто закоммитьте изменения - GitHub Actions обновит README автоматически.\n`;
+  readme += `### 3. Закоммитьте и запушьте:\n\n`;
+  readme += `\`\`\`bash\n`;
+  readme += `git add data/map.json\n`;
+  readme += `git commit -m "add: новый материал"\n`;
+  readme += `git push\n`;
+  readme += `\`\`\`\n\n`;
+  readme += `GitHub Actions автоматически обновит README! ⚡\n\n`;
+  readme += `</details>\n\n`;
+
+  readme += `---\n\n`;
+  readme += `<div align="center">\n\n`;
+  readme += `**Сделано с ❤️ для навигации по материалам**\n\n`;
+  readme += `\`v${data.meta.version}\` • Обновлено: \`${data.meta.updatedAt}\`\n\n`;
+  readme += `</div>\n`;
 
   // Записываем README
   fs.writeFileSync(readmePath, readme, 'utf-8');
@@ -121,3 +199,25 @@ try {
   process.exit(1);
 }
 
+// Функция для подбора emoji по разделу
+function getSectionEmoji(sectionId) {
+  const emojiMap = {
+    'devops': '🚀',
+    'k8s': '☸️',
+    'kubernetes': '☸️',
+    'frontend': '💻',
+    'backend': '⚙️',
+    'security': '🔐',
+    'databases': '🗄️',
+    'testing': '🧪',
+    'design': '🎨',
+    'mobile': '📱',
+    'ai': '🤖',
+    'ml': '🧠',
+    'cloud': '☁️',
+    'tools': '🛠️',
+    'best-practices': '⭐',
+  };
+  
+  return emojiMap[sectionId.toLowerCase()] || '📂';
+}

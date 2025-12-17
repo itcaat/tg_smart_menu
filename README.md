@@ -1,180 +1,469 @@
-# Карта канала
+<div align="center">
 
-> Навигация по материалам канала
+# 🗺️ Карта канала
 
-**Версия:** 1.0.0 • **Обновлено:** 2025-12-17
+### Навигация по материалам канала
 
-📊 **Статистика:** 5 разделов • 15 материалов • 5 закрепленных
+![Разделов](https://img.shields.io/badge/Разделов-5-blue?style=for-the-badge)
+![Материалов](https://img.shields.io/badge/Материалов-15-green?style=for-the-badge)
+![Закреплено](https://img.shields.io/badge/Закреплено-5-yellow?style=for-the-badge)
+![Обновлено](https://img.shields.io/badge/Обновлено-2025-12-17-lightgrey?style=for-the-badge)
+
+---
+
+</div>
 
 ## 📑 Содержание
 
-- [DevOps](#devops) (3)
-- [Kubernetes](#k8s) (3)
-- [Frontend](#frontend) (3)
-- [Backend](#backend) (3)
-- [Security](#security) (3)
+<table>
+<tr>
+<tr>
+<td width="50%">
+
+### [DevOps](#devops)
+Инфраструктура, деплой, SRE и мониторинг
+
+📚 **3** материалов
+
+</td>
+<td width="50%">
+
+### [Kubernetes](#k8s)
+Кластеры, операторы, best practices
+
+📚 **3** материалов
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### [Frontend](#frontend)
+React, Next.js, современные фреймворки
+
+📚 **3** материалов
+
+</td>
+<td width="50%">
+
+### [Backend](#backend)
+API, микросервисы, базы данных
+
+📚 **3** материалов
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### [Security](#security)
+Безопасность, аудит, best practices
+
+📚 **3** материалов
+
+</td>
+<td width="50%"></td>
+</tr>
+</table>
 
 ---
 
-## DevOps
+<div id="devops"></div>
 
-<a name="devops"></a>
+## 🚀 DevOps
 
-Инфраструктура, деплой, SRE и мониторинг
+> Инфраструктура, деплой, SRE и мониторинг
 
-### 📌 [Terraform: модульная структура](https://t.me/example_channel/100)
+<details>
+<summary>
+
+### 📌 Terraform: модульная структура
+
+</summary>
 
 Подход к организации Terraform модулей и управлению инфраструктурой как кодом
 
-**Теги:** `terraform` `iac` `modules`
+**🏷️ Теги:** `terraform` `iac` `modules` 
 
----
+<div align="center">
 
-### [CI/CD Pipeline с GitHub Actions](https://t.me/example_channel/101)
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/100)
+
+</div>
+
+</details>
+
+<details>
+<summary>
+
+### CI/CD Pipeline с GitHub Actions
+
+</summary>
 
 Настройка полного цикла CI/CD для микросервисов
 
-**Теги:** `ci-cd` `github-actions` `automation`
+**🏷️ Теги:** `ci-cd` `github-actions` `automation` 
 
----
+<div align="center">
 
-### [Стек мониторинга: Prometheus + Grafana](https://t.me/example_channel/102)
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/101)
+
+</div>
+
+</details>
+
+<details>
+<summary>
+
+### Стек мониторинга: Prometheus + Grafana
+
+</summary>
 
 Полноценная система мониторинга и алертинга
 
-**Теги:** `monitoring` `prometheus` `grafana`
+**🏷️ Теги:** `monitoring` `prometheus` `grafana` 
+
+<div align="center">
+
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/102)
+
+</div>
+
+</details>
+
+<div align="right">
+
+[⬆️ Наверх](#-содержание)
+
+</div>
 
 ---
 
-## Kubernetes
+<div id="k8s"></div>
 
-<a name="k8s"></a>
+## ☸️ Kubernetes
 
-Кластеры, операторы, best practices
+> Кластеры, операторы, best practices
 
-### 📌 [Kubernetes Operators: введение](https://t.me/example_channel/200)
+<details>
+<summary>
+
+### 📌 Kubernetes Operators: введение
+
+</summary>
 
 Что такое операторы и как они упрощают управление приложениями
 
-**Теги:** `kubernetes` `operators` `automation`
+**🏷️ Теги:** `kubernetes` `operators` `automation` 
 
----
+<div align="center">
 
-### [Helm: пакетирование приложений](https://t.me/example_channel/202)
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/200)
+
+</div>
+
+</details>
+
+<details>
+<summary>
+
+### Helm: пакетирование приложений
+
+</summary>
 
 Best practices для создания Helm charts
 
-**Теги:** `kubernetes` `helm` `packaging`
+**🏷️ Теги:** `kubernetes` `helm` `packaging` 
 
----
+<div align="center">
 
-### [Networking в Kubernetes](https://t.me/example_channel/201)
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/202)
+
+</div>
+
+</details>
+
+<details>
+<summary>
+
+### Networking в Kubernetes
+
+</summary>
 
 CNI плагины, Service Mesh, сетевые политики
 
-**Теги:** `kubernetes` `networking` `service-mesh`
+**🏷️ Теги:** `kubernetes` `networking` `service-mesh` 
+
+<div align="center">
+
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/201)
+
+</div>
+
+</details>
+
+<div align="right">
+
+[⬆️ Наверх](#-содержание)
+
+</div>
 
 ---
 
-## Frontend
+<div id="frontend"></div>
 
-<a name="frontend"></a>
+## 💻 Frontend
 
-React, Next.js, современные фреймворки
+> React, Next.js, современные фреймворки
 
-### 📌 [React Design Patterns 2025](https://t.me/example_channel/300)
+<details>
+<summary>
+
+### 📌 React Design Patterns 2025
+
+</summary>
 
 Современные паттерны проектирования в React приложениях
 
-**Теги:** `react` `patterns` `architecture`
+**🏷️ Теги:** `react` `patterns` `architecture` 
 
----
+<div align="center">
 
-### [Next.js: Server-Side Rendering](https://t.me/example_channel/301)
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/300)
+
+</div>
+
+</details>
+
+<details>
+<summary>
+
+### Next.js: Server-Side Rendering
+
+</summary>
 
 RSC, серверные компоненты и оптимизация производительности
 
-**Теги:** `nextjs` `ssr` `performance`
+**🏷️ Теги:** `nextjs` `ssr` `performance` 
 
----
+<div align="center">
 
-### [State Management в 2025](https://t.me/example_channel/302)
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/301)
+
+</div>
+
+</details>
+
+<details>
+<summary>
+
+### State Management в 2025
+
+</summary>
 
 Zustand, Jotai, и другие современные решения
 
-**Теги:** `react` `state` `zustand`
+**🏷️ Теги:** `react` `state` `zustand` 
+
+<div align="center">
+
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/302)
+
+</div>
+
+</details>
+
+<div align="right">
+
+[⬆️ Наверх](#-содержание)
+
+</div>
 
 ---
 
-## Backend
+<div id="backend"></div>
 
-<a name="backend"></a>
+## ⚙️ Backend
 
-API, микросервисы, базы данных
+> API, микросервисы, базы данных
 
-### 📌 [PostgreSQL: оптимизация запросов](https://t.me/example_channel/402)
+<details>
+<summary>
+
+### 📌 PostgreSQL: оптимизация запросов
+
+</summary>
 
 Индексы, EXPLAIN, и производительность
 
-**Теги:** `postgresql` `database` `performance`
+**🏷️ Теги:** `postgresql` `database` `performance` 
 
----
+<div align="center">
 
-### [gRPC для микросервисов](https://t.me/example_channel/401)
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/402)
+
+</div>
+
+</details>
+
+<details>
+<summary>
+
+### gRPC для микросервисов
+
+</summary>
 
 Когда и почему стоит использовать gRPC вместо REST
 
-**Теги:** `grpc` `microservices` `api`
+**🏷️ Теги:** `grpc` `microservices` `api` 
 
----
+<div align="center">
 
-### [RESTful API Design](https://t.me/example_channel/400)
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/401)
+
+</div>
+
+</details>
+
+<details>
+<summary>
+
+### RESTful API Design
+
+</summary>
 
 Принципы проектирования REST API и версионирование
 
-**Теги:** `api` `rest` `design`
+**🏷️ Теги:** `api` `rest` `design` 
+
+<div align="center">
+
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/400)
+
+</div>
+
+</details>
+
+<div align="right">
+
+[⬆️ Наверх](#-содержание)
+
+</div>
 
 ---
 
-## Security
+<div id="security"></div>
 
-<a name="security"></a>
+## 🔐 Security
 
-Безопасность, аудит, best practices
+> Безопасность, аудит, best practices
 
-### 📌 [OAuth 2.0 и OpenID Connect](https://t.me/example_channel/500)
+<details>
+<summary>
+
+### 📌 OAuth 2.0 и OpenID Connect
+
+</summary>
 
 Полный гайд по современной аутентификации
 
-**Теги:** `oauth` `security` `authentication`
+**🏷️ Теги:** `oauth` `security` `authentication` 
 
----
+<div align="center">
 
-### [HTTP Security Headers](https://t.me/example_channel/501)
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/500)
+
+</div>
+
+</details>
+
+<details>
+<summary>
+
+### HTTP Security Headers
+
+</summary>
 
 CSP, HSTS, и другие заголовки безопасности
 
-**Теги:** `security` `http` `headers`
+**🏷️ Теги:** `security` `http` `headers` 
 
----
+<div align="center">
 
-### [Управление секретами](https://t.me/example_channel/502)
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/501)
+
+</div>
+
+</details>
+
+<details>
+<summary>
+
+### Управление секретами
+
+</summary>
 
 Vault, Sealed Secrets и best practices
 
-**Теги:** `security` `secrets` `vault`
+**🏷️ Теги:** `security` `secrets` `vault` 
+
+<div align="center">
+
+[![Открыть материал](https://img.shields.io/badge/📖_Открыть_материал-blue?style=for-the-badge)](https://t.me/example_channel/502)
+
+</div>
+
+</details>
+
 
 ---
 
+<div align="center">
 
-## 📝 Об этом документе
+## 💡 Как добавить материал
 
-Этот README автоматически генерируется из `data/map.json`.
+</div>
 
-Для добавления материалов отредактируйте `data/map.json` и запустите:
+> **Этот README автоматически генерируется** из `data/map.json`.
+> Для добавления материалов отредактируйте JSON и запушьте изменения.
 
-```bash
-npm run generate-readme
+<details>
+<summary><b>📝 Инструкция по добавлению</b></summary>
+
+### 1. Откройте `data/map.json`
+
+### 2. Добавьте новый материал:
+
+```json
+{
+  "id": "unique-id",
+  "sectionId": "раздел",
+  "title": "Название",
+  "description": "Описание",
+  "tags": ["тег1", "тег2"],
+  "url": "https://...",
+  "pinned": false
+}
 ```
 
-Или просто закоммитьте изменения - GitHub Actions обновит README автоматически.
+### 3. Закоммитьте и запушьте:
+
+```bash
+git add data/map.json
+git commit -m "add: новый материал"
+git push
+```
+
+GitHub Actions автоматически обновит README! ⚡
+
+</details>
+
+---
+
+<div align="center">
+
+**Сделано с ❤️ для навигации по материалам**
+
+`v1.0.0` • Обновлено: `2025-12-17`
+
+</div>
