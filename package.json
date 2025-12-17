@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "validate": "node scripts/validate-map.js",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "generate-readme": "node scripts/generate-readme.js"
   },
   "dependencies": {
     "next": "^14.2.0",
